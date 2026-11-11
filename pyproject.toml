@@ -1,0 +1,17 @@
+[project]
+name = "radar-promos"
+version = "0.1.0"
+description = "Alertes Telegram des bonnes affaires (Black Friday, achat-revente)"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "pyyaml>=6.0.3",
+    "selectolax>=1.0.2",
+]
+
+[project.scripts]
+radar-promos = "radar_promos:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"

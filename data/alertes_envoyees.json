@@ -1,0 +1,34 @@
+{
+ "deal:3450017": {
+  "prix": 499.99,
+  "ts": 1794408295
+ },
+ "deal:3450697": {
+  "prix": 499.99,
+  "ts": 1794408295
+ },
+ "deal:3451665": {
+  "prix": 488.99,
+  "ts": 1794408296
+ },
+ "deal:3452067": {
+  "prix": 149.0,
+  "ts": 1794408296
+ },
+ "offre:Robot aspirateur Roborock:Amazon:149.0": {
+  "prix": 149.0,
+  "ts": 1794408296
+ },
+ "offre:Robot aspirateur Roborock:Amazon:499.99": {
+  "prix": 499.99,
+  "ts": 1794408295
+ },
+ "offre:Robot aspirateur Roborock:Cdiscount:488.99": {
+  "prix": 488.99,
+  "ts": 1794408296
+ },
+ "offre:Robot aspirateur Roborock:Roborock:499.99": {
+  "prix": 499.99,
+  "ts": 1794408295
+ }
+}

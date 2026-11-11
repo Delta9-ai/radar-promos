@@ -1,0 +1,176 @@
+# Liste de surveillance de Radar Promos
+# ------------------------------------------------------------
+# mode: revente -> l'outil calcule une marge de revente estimée
+# mode: perso   -> pour toi : alerte dès qu'il y a une vraie promo / du stock
+# search : ce qu'on tape dans la recherche des comparateurs
+# doit_contenir : tous ces mots doivent être dans le titre de l'offre
+# exclure : si un de ces mots est dans le titre, on ignore l'offre
+# prix_max : (optionnel) alerte seulement en dessous de ce prix
+# ------------------------------------------------------------
+
+lego:
+  # Tous les Lego Star Wars sont surveillés automatiquement via Avenue de la Brique
+  star_wars_tous: true
+  remise_min: 30          # % de remise mini vs prix LEGO pour alerter
+  remise_min_retraite: 20 # plus souple si le set part bientôt à la retraite
+  # Autres Lego : alerte si la promo est très bien notée par la communauté Dealabs
+  autres_lego_temperature_min: 150
+
+produits:
+  # ---------- CONSOLES (pour toi) ----------
+  - nom: PS5 (avec lecteur)
+    categorie: Consoles
+    mode: perso
+    search: ps5 slim
+    doit_contenir: [console, ps5]
+    exclure: [digital, numérique, sans lecteur, manette, dualsense, jeu, pro, portal, reconditionn, occasion, casque, lecteur blu, support, station, câble, coque, skin]
+  - nom: PS5 Digital (sans lecteur)
+    categorie: Consoles
+    mode: perso
+    search: ps5 digital
+    doit_contenir: [console, ps5, digital]
+    exclure: [manette, dualsense, jeu, pro, portal, reconditionn, occasion, casque, carte, psn, abonnement, support, station]
+  - nom: PS5 Pro
+    categorie: Consoles
+    mode: perso
+    search: ps5 pro
+    doit_contenir: [console, ps5, pro]
+    exclure: [manette, dualsense, jeu, reconditionn, occasion, casque, support, station, controller]
+  - nom: Xbox Series X
+    categorie: Consoles
+    mode: perso
+    search: xbox series x
+    doit_contenir: [console, xbox, series x]
+    exclure: [manette, jeu, reconditionn, occasion, casque, game pass, abonnement, carte, disque dur, ssd, support]
+  - nom: Xbox Series S
+    categorie: Consoles
+    mode: perso
+    search: xbox series s
+    doit_contenir: [console, xbox, series s]
+    exclure: [manette, jeu, reconditionn, occasion, casque, game pass, abonnement, carte, disque dur, ssd, support]
+  - nom: Manette DualSense PS5
+    categorie: Consoles
+    mode: perso
+    search: dualsense
+    doit_contenir: [dualsense]
+    exclure: [reconditionn, occasion, station, chargeur, coque, pack console]
+  - nom: Manette Xbox
+    categorie: Consoles
+    mode: perso
+    search: manette xbox
+    doit_contenir: [manette, xbox]
+    exclure: [reconditionn, occasion, chargeur, batterie, coque]
+  - nom: Nintendo Switch 2
+    categorie: Consoles
+    mode: revente
+    search: switch 2
+    doit_contenir: [console, switch 2]
+    exclure: [jeu, manette, joy-con, étui, housse, protection, carte, amiibo, reconditionn, occasion, support, câble]
+
+  # ---------- AUDIO ----------
+  - nom: Sony WH-1000XM5
+    categorie: Audio
+    mode: revente
+    search: wh-1000xm5
+    doit_contenir: [xm5]
+    exclure: [reconditionn, occasion, coussinet, étui]
+  - nom: Sony WH-1000XM6
+    categorie: Audio
+    mode: revente
+    search: wh-1000xm6
+    doit_contenir: [xm6]
+    exclure: [reconditionn, occasion, coussinet, étui]
+  - nom: AirPods Pro
+    categorie: Audio
+    mode: revente
+    search: airpods pro
+    doit_contenir: [airpods pro]
+    exclure: [reconditionn, occasion, étui seul, coque, embout]
+  - nom: Bose QuietComfort Ultra
+    categorie: Audio
+    mode: revente
+    search: bose quietcomfort ultra
+    doit_contenir: [bose, ultra]
+    exclure: [reconditionn, occasion]
+  - nom: JBL Charge
+    categorie: Audio
+    mode: revente
+    search: jbl charge
+    doit_contenir: [jbl, charge]
+    exclure: [reconditionn, occasion, housse, étui]
+  - nom: JBL Flip
+    categorie: Audio
+    mode: revente
+    search: jbl flip
+    doit_contenir: [jbl, flip]
+    exclure: [reconditionn, occasion, housse, étui]
+  - nom: Marshall (enceintes)
+    categorie: Audio
+    mode: revente
+    search: marshall enceinte
+    doit_contenir: [marshall]
+    exclure: [reconditionn, occasion, casque, ampli]
+
+  # ---------- PHOTO / VIDÉO ----------
+  - nom: DJI Osmo Pocket 3
+    categorie: Photo & vidéo
+    mode: revente
+    search: osmo pocket 3
+    doit_contenir: [pocket 3]
+    exclure: [reconditionn, occasion, accessoire, filtre, coque, étui]
+  - nom: Drone DJI Mini
+    categorie: Photo & vidéo
+    mode: revente
+    search: dji mini
+    doit_contenir: [dji, mini]
+    exclure: [reconditionn, occasion, batterie, hélice, coque, étui, sac]
+  - nom: DJI Osmo Action
+    categorie: Photo & vidéo
+    mode: revente
+    search: osmo action
+    doit_contenir: [osmo action]
+    exclure: [reconditionn, occasion, batterie, accessoire]
+  - nom: GoPro Hero
+    categorie: Photo & vidéo
+    mode: revente
+    search: gopro hero
+    doit_contenir: [gopro]
+    exclure: [reconditionn, occasion, batterie, accessoire, fixation, perche]
+
+  # ---------- MAISON ----------
+  - nom: Dyson Airwrap
+    categorie: Maison
+    mode: revente
+    search: dyson airwrap
+    doit_contenir: [airwrap]
+    exclure: [reconditionn, occasion, accessoire, embout]
+  - nom: Aspirateur Dyson V15 / Gen5
+    categorie: Maison
+    mode: revente
+    search: dyson v15
+    doit_contenir: [dyson]
+    exclure: [reconditionn, occasion, batterie, accessoire, filtre, airwrap, supersonic]
+  - nom: Ninja Creami
+    categorie: Maison
+    mode: revente
+    search: ninja creami
+    doit_contenir: [creami]
+    exclure: [reconditionn, occasion, pot, bol]
+  - nom: Air fryer Ninja
+    categorie: Maison
+    mode: revente
+    search: ninja air fryer
+    doit_contenir: [ninja]
+    exclure: [reconditionn, occasion, creami, accessoire, moule, papier]
+  - nom: Robot aspirateur Roborock
+    categorie: Maison
+    mode: revente
+    search: roborock
+    doit_contenir: [roborock]
+    exclure: [reconditionn, occasion, brosse, filtre, sac, accessoire]
+  - nom: De'Longhi Magnifica
+    categorie: Maison
+    mode: revente
+    search: delonghi magnifica
+    doit_contenir: [magnifica]
+    exclure: [reconditionn, occasion, détartrant, filtre]
