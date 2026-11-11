@@ -53,6 +53,19 @@ def cached(key: str, max_age_h: float, fn):
     return v
 
 
+def brickfact_value(set_id: str, lego) -> float | None:
+    """Valeur de revente en mémoire (7 jours), relue sur Brickfact seulement si le budget le permet."""
+    key = f"brickfact_valeur:{set_id}"
+    c = cache.get(key)
+    fresh = c and time.time() - c["ts"] < (7 if c["v"] else 1) * 86400
+    if fresh or not lego.brickfact_disponible():
+        return c["v"] if c else None  # une valeur un peu ancienne vaut mieux que rien
+    v = lego.market_value(set_id)
+    if v is not None or not lego._bf["bloque"]:  # ne pas mémoriser un refus comme « pas de valeur »
+        cache[key] = {"v": v, "ts": int(time.time())}
+    return v if v is not None else (c["v"] if c else None)
+
+
 def save_all() -> None:
     _save("historique_prix.json", history)
     _save("alertes_envoyees.json", sent)

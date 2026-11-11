@@ -5,6 +5,7 @@ Lancer :  uv run radar-promos            (vérifie tout et envoie les alertes)
 """
 import argparse
 import os
+import time
 from pathlib import Path
 
 import yaml
@@ -45,7 +46,14 @@ def check_lego(cfg: dict) -> list[dict]:
     print("🧱 Lego Star Wars (Avenue de la Brique)…")
     sets = lego.list_star_wars()
     print(f"  {len(sets)} sets en vente")
-    retiring = set(store.cached("brickfact_retraite", 24, lambda: sorted(lego.retiring_ids())))
+    old = store.cache.get("brickfact_retraite")
+    if old and old["v"] and time.time() - old["ts"] < 24 * 3600:
+        retiring = set(old["v"])
+    else:
+        fresh_ids = lego.retiring_ids()
+        if fresh_ids:  # ne jamais remplacer la liste par une liste vide (site qui refuse)
+            store.cache["brickfact_retraite"] = {"v": sorted(fresh_ids), "ts": int(time.time())}
+        retiring = fresh_ids or set(old["v"] if old else [])
     cards = []
     for s in sets:
         key = f"lego:{s.set_id}"
@@ -56,7 +64,7 @@ def check_lego(cfg: dict) -> list[dict]:
         if s.reduc < seuil or store.already_sent(key, s.best_price):
             continue
         lego.enrich_offers(s)
-        s.market_value = store.cached(f"brickfact_valeur:{s.set_id}", 24, lambda: lego.market_value(s.set_id))
+        s.market_value = store.brickfact_value(s.set_id, lego)
         price = s.offers[0]["price"] if s.offers else s.best_price
         rrp = s.rrp or round(price / (1 - s.reduc / 100), 2)
         second = s.offers[1]["price"] if len(s.offers) > 1 else None

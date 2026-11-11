@@ -102,10 +102,24 @@ def retiring_ids() -> set[str]:
     return set(re.findall(r"\b(7\d{4})\b", page)) if page else set()
 
 
+# Brickfact bloque si on lit trop de pages d'affilée : budget limité par passage,
+# pause longue, et arrêt immédiat au premier refus.
+BRICKFACT_MAX_PAR_PASSAGE = 6
+_bf = {"restant": BRICKFACT_MAX_PAR_PASSAGE, "bloque": False}
+
+
+def brickfact_disponible() -> bool:
+    return not _bf["bloque"] and _bf["restant"] > 0
+
+
 def market_value(set_id: str) -> float | None:
     """Valeur de marché sur le marché secondaire (revente), d'après Brickfact."""
-    page = web.get(f"https://brickfact.com/fr-fr/sets/{set_id}")
+    _bf["restant"] -= 1
+    page = web.get(f"https://brickfact.com/fr-fr/sets/{set_id}", pause=(4.0, 7.0))
     if not page:
+        if web.last_status in (403, 429):
+            _bf["bloque"] = True
+            print("  ! Brickfact refuse les lectures : pause jusqu'au prochain passage")
         return None
     txt = htmlmod.unescape(re.sub(r"<[^>]+>", " ", page))
     txt = re.sub(r"\s+", " ", txt)

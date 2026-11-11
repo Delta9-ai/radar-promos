@@ -16,14 +16,20 @@ _client = httpx.Client(
 )
 
 
+last_status = 0
+
+
 def get(url: str, pause: tuple[float, float] = (1.0, 2.5)) -> str | None:
     """Renvoie le HTML de la page, ou None si le site refuse."""
+    global last_status
     time.sleep(random.uniform(*pause))
     try:
         r = _client.get(url)
     except httpx.HTTPError as e:
         print(f"  ! réseau {url}: {e}")
+        last_status = 0
         return None
+    last_status = r.status_code
     if r.status_code != 200:
         print(f"  ! {r.status_code} {url}")
         return None
