@@ -68,7 +68,8 @@ def check_lego(cfg: dict) -> list[dict]:
         price = s.offers[0]["price"] if s.offers else s.best_price
         rrp = s.rrp or round(price / (1 - s.reduc / 100), 2)
         second = s.offers[1]["price"] if len(s.offers) > 1 else None
-        v = evaluate(price, rrp, resale=s.market_value, lowest_90d=low90, second_best=second, retiring=s.retiring)
+        v = evaluate(price, rrp, resale=s.market_value, lowest_90d=low90, second_best=second, retiring=s.retiring,
+                     collector=lego.is_collector(s.name, rrp))
         if v.score < 5:
             continue  # remise affichée mais pas une vraie bonne affaire
 

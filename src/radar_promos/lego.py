@@ -125,3 +125,9 @@ def market_value(set_id: str) -> float | None:
     txt = re.sub(r"\s+", " ", txt)
     m = re.search(r"Valeur marchande actuelle\s*([\d\s]+,\d{2})\s*€", txt)
     return float(m.group(1).replace(" ", "").replace(",", ".")) if m else None
+
+
+def is_collector(name: str, rrp: float | None) -> bool:
+    """UCS ou gros set (≥ 150 € prix LEGO) : ce que les collectionneurs rachètent le plus cher."""
+    n = name.lower()
+    return "ucs" in n or "ultimate collector" in n or "collector" in n or (rrp or 0) >= 150

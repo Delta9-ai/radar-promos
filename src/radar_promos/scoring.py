@@ -26,6 +26,7 @@ def evaluate(
     retiring: bool = False,
     temperature: float | None = None,
     perso: bool = False,
+    collector: bool = False,
 ) -> Verdict:
     pts, why = 0.0, []
 
@@ -34,6 +35,22 @@ def evaluate(
     pts += min(4.0, disc / 10)
     if disc:
         why.append(f"-{disc:.0f} % vs prix habituel")
+
+    # 1 bis) Économie en euros : 100 € d'économie comptent plus que 6 € (max 2 pts)
+    saving = (ref_price - price) if ref_price and ref_price > price else 0
+    if saving >= 100:
+        pts += 2
+        why.append(f"💸 {saving:.0f} € d'économie")
+    elif saving >= 60:
+        pts += 1.5
+        why.append(f"💸 {saving:.0f} € d'économie")
+    elif saving >= 30:
+        pts += 0.75
+
+    # 1 ter) Set collector (UCS, gros set adulte) : ce qui se revend le mieux (+1)
+    if collector:
+        pts += 1
+        why.append("🏆 set collector (très recherché en revente)")
 
     # 2) Historique : est-ce le plus bas des 90 derniers jours ? (+1,5 / -2)
     if lowest_90d:
@@ -48,6 +65,9 @@ def evaluate(
     if second_best and second_best > price * 1.05:
         pts += 1
         why.append(f"{(1 - price / second_best) * 100:.0f} % moins cher que le 2e site")
+    elif second_best and second_best < price * 0.97:
+        pts -= 1.5
+        why.append(f"⚠️ moins cher ailleurs : {second_best:.2f} €")
 
     # 4) Marge de revente (max 3 pts)
     margin = margin_pct = None
