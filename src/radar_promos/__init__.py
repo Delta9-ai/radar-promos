@@ -10,7 +10,7 @@ from pathlib import Path
 
 import yaml
 
-from . import dealabs, lego, store, telegram
+from . import dealabs, hangar99, lego, store, telegram
 from .scoring import DECOTE_REVENTE, evaluate
 from .telegram import esc
 
@@ -42,20 +42,78 @@ def verdict_lines(v, approx: bool = False) -> list[str]:
 
 
 # ---------------------------------------------------------------- LEGO STAR WARS
+ADB_BEST: dict[str, tuple[float, str, str]] = {}  # set -> (meilleur prix toutes boutiques, url, nom FR)
+
+
+def get_retiring() -> set[str]:
+    old = store.cache.get("brickfact_retraite")
+    if old and old["v"] and time.time() - old["ts"] < 24 * 3600:
+        return set(old["v"])
+    fresh_ids = lego.retiring_ids()
+    if fresh_ids:  # ne jamais remplacer la liste par une liste vide (site qui refuse)
+        store.cache["brickfact_retraite"] = {"v": sorted(fresh_ids), "ts": int(time.time())}
+    return fresh_ids or set(old["v"] if old else [])
+
+
+def check_hangar99() -> list[dict]:
+    """Promos Amazon + Fnac repérées par Hangar99 (dès que le site met à jour ses prix)."""
+    print("🛸 Hangar99…")
+    offers = hangar99.promos()
+    print(f"  {len(offers)} offres")
+    retiring = get_retiring()
+    by_set: dict[str, list[dict]] = {}
+    for o in offers:
+        by_set.setdefault(o["set_id"], []).append(o)
+    cards = []
+    for sid, offs in by_set.items():
+        offs.sort(key=lambda o: o["price"])
+        o = offs[0]  # la moins chère des deux boutiques
+        key = f"lego:{sid}"
+        if store.already_sent(key, o["price"]):
+            continue
+        adb = ADB_BEST.get(sid)
+        others = [x["price"] for x in offs[1:]] + ([adb[0]] if adb and adb[0] < o["price"] * 0.999 else [])
+        second = min(others) if others else None
+        is_retiring = sid in retiring
+        v = evaluate(o["price"], o["lego"], resale=store.brickfact_value(sid, lego),
+                     lowest_90d=store.lowest_before_today(key), second_best=second, retiring=is_retiring,
+                     collector=lego.is_collector(o["name"], o["lego"]))
+        saving = o["lego"] - o["price"]
+        if v.score < 4.5 and not (saving >= 40 and o["pct"] >= 25):
+            continue  # Hangar99 liste déjà des promos : on garde les meilleures (note ou grosse économie)
+        if v.score < 5:  # bonne promo, mais pas rentable à revendre tout de suite
+            v.emoji, v.label = "🟡", "BONNE PROMO (pour soi ou à garder)"
+        name = adb[2] if adb else f"LEGO Star Wars {sid} {o['name']}"
+        mv = store.cache.get(f"brickfact_valeur:{sid}", {}).get("v")
+        lines = [f"🧱 <b>{esc(name)}</b>", "<i>repéré par Hangar99</i>", "", *verdict_lines(v), "",
+                 f"💶 <b>{eur(o['price'])}</b> chez <b>{o['shop']}</b>",
+                 f"🏷️ Prix LEGO : <s>{eur(o['lego'])}</s> → <b>-{(1 - o['price'] / o['lego']) * 100:.0f} %</b>"
+                 f" ({eur(o['lego'] - o['price'])} d'économie)"]
+        if mv:
+            lines.append(f"♻️ Valeur de revente actuelle : {eur(mv)} (Brickfact)")
+        autres = [f"{x['shop']} {eur(x['price'])}" for x in offs[1:]]
+        if adb and adb[0] < o["price"] * 0.999:
+            autres.append(f"⚠️ ailleurs dès {eur(adb[0])}")
+        if autres:
+            lines.append("🏪 Ailleurs : " + " · ".join(autres))
+        if o["at"]:
+            lines.append(f"🕒 Prix vérifié {hangar99.checked_ago(o['at'])}")
+        buttons = [(f"🛒 Acheter chez {o['shop']}", o["url"])]
+        if adb:
+            buttons.append(("📊 Comparer les prix", adb[1]))
+        cards.append({"key": key, "price": o["price"], "score": v.score, "text": "\n".join(lines),
+                      "image": o["image"], "buttons": buttons})
+    return cards
+
+
 def check_lego(cfg: dict) -> list[dict]:
     print("🧱 Lego Star Wars (Avenue de la Brique)…")
     sets = lego.list_star_wars()
     print(f"  {len(sets)} sets en vente")
-    old = store.cache.get("brickfact_retraite")
-    if old and old["v"] and time.time() - old["ts"] < 24 * 3600:
-        retiring = set(old["v"])
-    else:
-        fresh_ids = lego.retiring_ids()
-        if fresh_ids:  # ne jamais remplacer la liste par une liste vide (site qui refuse)
-            store.cache["brickfact_retraite"] = {"v": sorted(fresh_ids), "ts": int(time.time())}
-        retiring = fresh_ids or set(old["v"] if old else [])
+    retiring = get_retiring()
     cards = []
     for s in sets:
+        ADB_BEST[s.set_id] = (s.best_price, s.url, s.name)
         key = f"lego:{s.set_id}"
         low90 = store.lowest_before_today(key)
         store.record_price(key, s.best_price)
@@ -185,6 +243,8 @@ def main() -> None:
     cards = []
     if cfg["lego"].get("star_wars_tous"):
         cards += check_lego(cfg["lego"])
+    if cfg["lego"].get("hangar99", True):
+        cards += check_hangar99()
     cards += check_dealabs(cfg.get("produits", []), cfg["lego"])
     cards.sort(key=lambda c: -c["score"])
     uniq, vus = [], set()

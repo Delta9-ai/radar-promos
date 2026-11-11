@@ -11,6 +11,8 @@
 lego:
   # Tous les Lego Star Wars sont surveillés automatiquement via Avenue de la Brique
   star_wars_tous: true
+  # Hangar99.fr : promos Amazon + Fnac des Lego Star Wars, revérifiées toutes les heures
+  hangar99: true
   remise_min: 30          # % de remise mini vs prix LEGO pour alerter
   remise_min_retraite: 20 # plus souple si le set part bientôt à la retraite
   # Autres Lego : alerte si la promo est très bien notée par la communauté Dealabs
