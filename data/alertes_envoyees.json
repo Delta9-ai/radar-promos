@@ -79,6 +79,14 @@
   "prix": 19.99,
   "ts": 1794528143
  },
+ "deal:3454552": {
+  "prix": 24.99,
+  "ts": 1794605342
+ },
+ "deal:3454736": {
+  "prix": 51.9,
+  "ts": 1794605343
+ },
  "lego:75328": {
   "prix": 39.68,
   "ts": 1794582909
@@ -223,9 +231,17 @@
   "prix": 59.99,
   "ts": 1794451780
  },
+ "offre:Manette DualSense PS5:Fnac:24.99": {
+  "prix": 24.99,
+  "ts": 1794605342
+ },
  "offre:Manette Xbox:Alibaba:55.1": {
   "prix": 55.1,
   "ts": 1794528147
+ },
+ "offre:Manette Xbox:Amazon:51.9": {
+  "prix": 51.9,
+  "ts": 1794605343
  },
  "offre:Manette Xbox:Cdiscount:19.99": {
   "prix": 19.99,
