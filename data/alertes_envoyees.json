@@ -111,6 +111,26 @@
   "prix": 140.59,
   "ts": 1794798111
  },
+ "deal:3456778": {
+  "prix": 54.45,
+  "ts": 1794826889
+ },
+ "deal:3456921": {
+  "prix": 59.49,
+  "ts": 1794826890
+ },
+ "deal:3456926": {
+  "prix": 54.99,
+  "ts": 1794826890
+ },
+ "deal:3456966": {
+  "prix": 59.99,
+  "ts": 1794826891
+ },
+ "deal:3457434": {
+  "prix": 54.99,
+  "ts": 1794826889
+ },
  "lego:75328": {
   "prix": 39.68,
   "ts": 1794582909
@@ -144,8 +164,8 @@
   "ts": 1794582911
  },
  "lego:75399": {
-  "prix": 48.99,
-  "ts": 1794528145
+  "prix": 39.74,
+  "ts": 1794826887
  },
  "lego:75400": {
   "prix": 9.09,
@@ -184,8 +204,8 @@
   "ts": 1794747665
  },
  "lego:75423": {
-  "prix": 61.5,
-  "ts": 1794770553
+  "prix": 55.76,
+  "ts": 1794826888
  },
  "lego:75424": {
   "prix": 32.04,
@@ -221,7 +241,7 @@
  },
  "lego:75446": {
   "prix": 74.99,
-  "ts": 1794552713
+  "ts": 1794826888
  },
  "lego:75447": {
   "prix": 99.99,
@@ -251,9 +271,17 @@
   "prix": 242.17,
   "ts": 1794451774
  },
+ "offre:Manette DualSense PS5:Amazon.es:54.45": {
+  "prix": 54.45,
+  "ts": 1794826889
+ },
  "offre:Manette DualSense PS5:Amazon.it:168.39": {
   "prix": 168.39,
   "ts": 1794528144
+ },
+ "offre:Manette DualSense PS5:Amazon:54.99": {
+  "prix": 54.99,
+  "ts": 1794826889
  },
  "offre:Manette DualSense PS5:Amazon:59.99": {
   "prix": 59.99,
@@ -263,6 +291,14 @@
   "prix": 59.99,
   "ts": 1794451780
  },
+ "offre:Manette DualSense PS5:Cdiscount:54.99": {
+  "prix": 54.99,
+  "ts": 1794826890
+ },
+ "offre:Manette DualSense PS5:Cdiscount:59.99": {
+  "prix": 59.99,
+  "ts": 1794826891
+ },
  "offre:Manette DualSense PS5:Fnac:24.99": {
   "prix": 24.99,
   "ts": 1794605342
@@ -270,6 +306,10 @@
  "offre:Manette DualSense PS5:Micromania Zing:54.99": {
   "prix": 54.99,
   "ts": 1794785450
+ },
+ "offre:Manette DualSense PS5:PcComponentes:59.49": {
+  "prix": 59.49,
+  "ts": 1794826890
  },
  "offre:Manette DualSense PS5:PlayStation Direct:54.99": {
   "prix": 54.99,
