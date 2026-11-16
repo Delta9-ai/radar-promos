@@ -131,9 +131,17 @@
   "prix": 54.99,
   "ts": 1794826889
  },
+ "deal:3457549": {
+  "prix": 239.99,
+  "ts": 1794862715
+ },
+ "deal:3458057": {
+  "prix": 581.25,
+  "ts": 1794862714
+ },
  "lego:75328": {
   "prix": 39.68,
-  "ts": 1794582909
+  "ts": 1794862713
  },
  "lego:75351": {
   "prix": 45.59,
@@ -157,11 +165,11 @@
  },
  "lego:75389": {
   "prix": 118.92,
-  "ts": 1794582907
+  "ts": 1794862711
  },
  "lego:75398": {
   "prix": 92.57,
-  "ts": 1794582911
+  "ts": 1794862714
  },
  "lego:75399": {
   "prix": 39.74,
@@ -229,7 +237,7 @@
  },
  "lego:75435": {
   "prix": 99.37,
-  "ts": 1794582910
+  "ts": 1794862713
  },
  "lego:75437": {
   "prix": 17.0,
@@ -237,7 +245,11 @@
  },
  "lego:75439": {
   "prix": 31.27,
-  "ts": 1794582912
+  "ts": 1794862715
+ },
+ "lego:75442": {
+  "prix": 174.99,
+  "ts": 1794862713
  },
  "lego:75446": {
   "prix": 74.99,
@@ -262,6 +274,10 @@
  "lego:75455": {
   "prix": 118.99,
   "ts": 1794770555
+ },
+ "offre:De'Longhi Magnifica:Carrefour:239.99": {
+  "prix": 239.99,
+  "ts": 1794862715
  },
  "offre:De'Longhi Magnifica:Carrefour:269.99": {
   "prix": 269.99,
@@ -370,6 +386,10 @@
  "offre:Robot aspirateur Roborock:Amazon:799.0": {
   "prix": 799.0,
   "ts": 1794433866
+ },
+ "offre:Robot aspirateur Roborock:Boulanger:581.25": {
+  "prix": 581.25,
+  "ts": 1794862714
  },
  "offre:Robot aspirateur Roborock:Cdiscount:488.99": {
   "prix": 488.99,
