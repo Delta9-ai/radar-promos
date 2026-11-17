@@ -159,6 +159,10 @@
   "prix": 64.99,
   "ts": 1794886838
  },
+ "deal:3457898": {
+  "prix": 168.84,
+  "ts": 1794918786
+ },
  "deal:3457988": {
   "prix": 59.99,
   "ts": 1794886837
@@ -170,6 +174,14 @@
  "deal:3458403": {
   "prix": 299.99,
   "ts": 1794886837
+ },
+ "deal:3458854": {
+  "prix": 299.0,
+  "ts": 1794918785
+ },
+ "deal:3458916": {
+  "prix": 379.06,
+  "ts": 1794918786
  },
  "lego:75328": {
   "prix": 39.68,
@@ -307,6 +319,10 @@
   "prix": 118.99,
   "ts": 1794770555
  },
+ "offre:Aspirateur Dyson V15 / Gen5:Dyson:299.0": {
+  "prix": 299.0,
+  "ts": 1794918785
+ },
  "offre:De'Longhi Magnifica:Carrefour:239.99": {
   "prix": 239.99,
   "ts": 1794862715
@@ -318,6 +334,10 @@
  "offre:De'Longhi Magnifica:eBay:242.17": {
   "prix": 242.17,
   "ts": 1794451774
+ },
+ "offre:Dyson Airwrap:Dyson:379.06": {
+  "prix": 379.06,
+  "ts": 1794918786
  },
  "offre:Manette DualSense PS5:Amazon.es:54.45": {
   "prix": 54.45,
@@ -350,6 +370,10 @@
  "offre:Manette DualSense PS5:Cdiscount:59.99": {
   "prix": 59.99,
   "ts": 1794826891
+ },
+ "offre:Manette DualSense PS5:E.Leclerc:168.84": {
+  "prix": 168.84,
+  "ts": 1794918786
  },
  "offre:Manette DualSense PS5:E.Leclerc:64.9": {
   "prix": 64.9,
