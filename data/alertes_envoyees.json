@@ -187,6 +187,18 @@
   "prix": 59.99,
   "ts": 1794950654
  },
+ "deal:3459563": {
+  "prix": 799.0,
+  "ts": 1795002521
+ },
+ "deal:3459693": {
+  "prix": 59.99,
+  "ts": 1795002521
+ },
+ "deal:3459949": {
+  "prix": 263.2,
+  "ts": 1795002517
+ },
  "lego:75328": {
   "prix": 39.68,
   "ts": 1794862713
@@ -237,7 +249,7 @@
  },
  "lego:75408": {
   "prix": 41.0,
-  "ts": 1794721494
+  "ts": 1795002518
  },
  "lego:75413": {
   "prix": 97.9,
@@ -295,6 +307,10 @@
   "prix": 31.27,
   "ts": 1794862715
  },
+ "lego:75440": {
+  "prix": 38.24,
+  "ts": 1795002520
+ },
  "lego:75442": {
   "prix": 174.99,
   "ts": 1794862713
@@ -305,7 +321,7 @@
  },
  "lego:75447": {
   "prix": 99.99,
-  "ts": 1794721494
+  "ts": 1795002518
  },
  "lego:75449": {
   "prix": 12.0,
@@ -313,7 +329,7 @@
  },
  "lego:75453": {
   "prix": 139.99,
-  "ts": 1794721495
+  "ts": 1795002519
  },
  "lego:75454": {
   "prix": 111.99,
@@ -322,6 +338,14 @@
  "lego:75455": {
   "prix": 118.99,
   "ts": 1794770555
+ },
+ "lego:75456": {
+  "prix": 19.99,
+  "ts": 1795002519
+ },
+ "offre:Aspirateur Dyson V15 / Gen5:Carrefour:263.2": {
+  "prix": 263.2,
+  "ts": 1795002517
  },
  "offre:Aspirateur Dyson V15 / Gen5:Dyson:299.0": {
   "prix": 299.0,
@@ -398,6 +422,10 @@
  "offre:Manette DualSense PS5:Micromania Zing:54.99": {
   "prix": 54.99,
   "ts": 1794785450
+ },
+ "offre:Manette DualSense PS5:Micromania Zing:59.99": {
+  "prix": 59.99,
+  "ts": 1795002521
  },
  "offre:Manette DualSense PS5:PcComponentes:54.54": {
   "prix": 54.54,
@@ -494,6 +522,10 @@
  "offre:Robot aspirateur Roborock:Darty:579.99": {
   "prix": 579.99,
   "ts": 1794433868
+ },
+ "offre:Robot aspirateur Roborock:Fnac:799.0": {
+  "prix": 799.0,
+  "ts": 1795002521
  },
  "offre:Robot aspirateur Roborock:Roborock:479.99": {
   "prix": 479.99,
