@@ -219,6 +219,26 @@
   "prix": 52.07,
   "ts": 1795053430
  },
+ "deal:3461116": {
+  "prix": 45.6,
+  "ts": 1795114953
+ },
+ "deal:3462169": {
+  "prix": 274.0,
+  "ts": 1795114948
+ },
+ "deal:3462229": {
+  "prix": 324.0,
+  "ts": 1795114952
+ },
+ "deal:3462235": {
+  "prix": 147.53,
+  "ts": 1795114950
+ },
+ "lego:75325": {
+  "prix": 40.58,
+  "ts": 1795114950
+ },
  "lego:75328": {
   "prix": 39.68,
   "ts": 1794862713
@@ -304,8 +324,8 @@
   "ts": 1795033010
  },
  "lego:75423": {
-  "prix": 55.76,
-  "ts": 1794826888
+  "prix": 61.5,
+  "ts": 1795114949
  },
  "lego:75424": {
   "prix": 32.04,
@@ -322,6 +342,10 @@
  "lego:75427": {
   "prix": 106.99,
   "ts": 1795053428
+ },
+ "lego:75431": {
+  "prix": 25.99,
+  "ts": 1795114951
  },
  "lego:75433": {
   "prix": 47.9,
@@ -357,7 +381,7 @@
  },
  "lego:75446": {
   "prix": 74.99,
-  "ts": 1794826888
+  "ts": 1795114949
  },
  "lego:75447": {
   "prix": 99.99,
@@ -511,6 +535,10 @@
   "prix": 140.59,
   "ts": 1794798111
  },
+ "offre:Manette Xbox:Amazon:45.6": {
+  "prix": 45.6,
+  "ts": 1795114953
+ },
  "offre:Manette Xbox:Amazon:46.26": {
   "prix": 46.26,
   "ts": 1795053430
@@ -547,6 +575,14 @@
   "prix": 119.98,
   "ts": 1794552715
  },
+ "offre:Marshall (enceintes):Cdiscount:324.0": {
+  "prix": 324.0,
+  "ts": 1795114952
+ },
+ "offre:Ninja Creami:Amazon.it:147.53": {
+  "prix": 147.53,
+  "ts": 1795114950
+ },
  "offre:Robot aspirateur Roborock:Amazon:149.0": {
   "prix": 149.0,
   "ts": 1794408296
@@ -582,6 +618,10 @@
  "offre:Robot aspirateur Roborock:Boulanger:581.25": {
   "prix": 581.25,
   "ts": 1794862714
+ },
+ "offre:Robot aspirateur Roborock:Cdiscount:274.0": {
+  "prix": 274.0,
+  "ts": 1795114948
  },
  "offre:Robot aspirateur Roborock:Cdiscount:488.99": {
   "prix": 488.99,
