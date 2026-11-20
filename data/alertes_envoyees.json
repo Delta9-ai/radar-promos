@@ -208,8 +208,8 @@
   "ts": 1795053429
  },
  "deal:3460688": {
-  "prix": 59.9,
-  "ts": 1795053429
+  "prix": 57.85,
+  "ts": 1795164096
  },
  "deal:3460898": {
   "prix": 42.44,
@@ -227,6 +227,10 @@
   "prix": 45.6,
   "ts": 1795114953
  },
+ "deal:3461576": {
+  "prix": 789.96,
+  "ts": 1795164096
+ },
  "deal:3462082": {
   "prix": 49.17,
   "ts": 1795137297
@@ -243,9 +247,21 @@
   "prix": 147.53,
   "ts": 1795114950
  },
+ "deal:3462243": {
+  "prix": 399.0,
+  "ts": 1795164095
+ },
  "deal:3462410": {
   "prix": 58.99,
   "ts": 1795137296
+ },
+ "deal:3462797": {
+  "prix": 59.99,
+  "ts": 1795164096
+ },
+ "deal:3462922": {
+  "prix": 139.0,
+  "ts": 1795164095
  },
  "lego:75325": {
   "prix": 40.58,
@@ -417,7 +433,7 @@
  },
  "lego:75454": {
   "prix": 111.99,
-  "ts": 1794509302
+  "ts": 1795164094
  },
  "lego:75455": {
   "prix": 118.9,
@@ -443,6 +459,10 @@
   "prix": 269.99,
   "ts": 1794798110
  },
+ "offre:De'Longhi Magnifica:De'Longhi:399.0": {
+  "prix": 399.0,
+  "ts": 1795164095
+ },
  "offre:De'Longhi Magnifica:eBay:242.17": {
   "prix": 242.17,
   "ts": 1794451774
@@ -466,6 +486,10 @@
  "offre:Manette DualSense PS5:Amazon:54.99": {
   "prix": 54.99,
   "ts": 1794826889
+ },
+ "offre:Manette DualSense PS5:Amazon:57.85": {
+  "prix": 57.85,
+  "ts": 1795164096
  },
  "offre:Manette DualSense PS5:Amazon:58.99": {
   "prix": 58.99,
@@ -493,7 +517,7 @@
  },
  "offre:Manette DualSense PS5:Cdiscount:59.99": {
   "prix": 59.99,
-  "ts": 1794826891
+  "ts": 1795164096
  },
  "offre:Manette DualSense PS5:E.Leclerc:168.84": {
   "prix": 168.84,
@@ -526,6 +550,10 @@
  "offre:Manette DualSense PS5:Micromania Zing:59.99": {
   "prix": 59.99,
   "ts": 1795002521
+ },
+ "offre:Manette DualSense PS5:Micromania Zing:789.96": {
+  "prix": 789.96,
+  "ts": 1795164096
  },
  "offre:Manette DualSense PS5:PcComponentes:54.54": {
   "prix": 54.54,
@@ -646,6 +674,10 @@
  "offre:Robot aspirateur Roborock:Boulanger:581.25": {
   "prix": 581.25,
   "ts": 1794862714
+ },
+ "offre:Robot aspirateur Roborock:Cdiscount:139.0": {
+  "prix": 139.0,
+  "ts": 1795164095
  },
  "offre:Robot aspirateur Roborock:Cdiscount:274.0": {
   "prix": 274.0,
