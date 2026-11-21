@@ -287,6 +287,14 @@
   "prix": 170.42,
   "ts": 1795265278
  },
+ "deal:3464448": {
+  "prix": 16.99,
+  "ts": 1795291266
+ },
+ "deal:3464615": {
+  "prix": 598.99,
+  "ts": 1795291266
+ },
  "lego:75325": {
   "prix": 40.58,
   "ts": 1795114950
@@ -679,6 +687,10 @@
   "prix": 119.98,
   "ts": 1794552715
  },
+ "offre:Manette Xbox:PcComponentes:16.99": {
+  "prix": 16.99,
+  "ts": 1795291266
+ },
  "offre:Marshall (enceintes):Cdiscount:324.0": {
   "prix": 324.0,
   "ts": 1795114952
@@ -710,6 +722,10 @@
  "offre:Robot aspirateur Roborock:Amazon:499.99": {
   "prix": 499.99,
   "ts": 1794408295
+ },
+ "offre:Robot aspirateur Roborock:Amazon:598.99": {
+  "prix": 598.99,
+  "ts": 1795291266
  },
  "offre:Robot aspirateur Roborock:Amazon:749.0": {
   "prix": 749.0,
