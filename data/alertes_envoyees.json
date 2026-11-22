@@ -307,6 +307,14 @@
   "prix": 269.99,
   "ts": 1795306752
  },
+ "deal:3465418": {
+  "prix": 118.0,
+  "ts": 1795382382
+ },
+ "deal:3465491": {
+  "prix": 455.99,
+  "ts": 1795382383
+ },
  "lego:75325": {
   "prix": 40.58,
   "ts": 1795114950
@@ -396,8 +404,8 @@
   "ts": 1795306753
  },
  "lego:75423": {
-  "prix": 61.5,
-  "ts": 1795114949
+  "prix": 62.99,
+  "ts": 1795382384
  },
  "lego:75424": {
   "prix": 32.04,
@@ -461,7 +469,7 @@
  },
  "lego:75446": {
   "prix": 74.99,
-  "ts": 1795114949
+  "ts": 1795382383
  },
  "lego:75447": {
   "prix": 99.99,
@@ -735,6 +743,10 @@
   "prix": 299.99,
   "ts": 1794886837
  },
+ "offre:Robot aspirateur Roborock:Amazon:455.99": {
+  "prix": 455.99,
+  "ts": 1795382383
+ },
  "offre:Robot aspirateur Roborock:Amazon:479.99": {
   "prix": 479.99,
   "ts": 1794668986
@@ -758,6 +770,10 @@
  "offre:Robot aspirateur Roborock:Boulanger:581.25": {
   "prix": 581.25,
   "ts": 1794862714
+ },
+ "offre:Robot aspirateur Roborock:Cdiscount:118.0": {
+  "prix": 118.0,
+  "ts": 1795382382
  },
  "offre:Robot aspirateur Roborock:Cdiscount:139.0": {
   "prix": 139.0,
